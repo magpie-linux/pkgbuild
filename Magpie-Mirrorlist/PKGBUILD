@@ -1,14 +1,14 @@
 # Maintainer: Rizwan Hasan <rizwan.hasan486@gmail.com>
 
 pkgname=magpie-mirrorlist
-pkgver=2.0
+pkgver=2.1
 pkgrel=2
 pkgdesc="MagpieOS mirror list for use by pacman"
 arch=('any')
 url="http://mirror.magpieos.net/MagpieOS-Repository/"
 license=('GPL')
 source=($pkgname.zip)
-md5sums=('570b043d7b0c128c92ea9e205bbfcd76')
+md5sums=('b5ad1753080d83c7552275b91192b478')
 
 package() {
   mkdir -p $pkgdir/etc/pacman.d/magpie
