@@ -1,0 +1,19 @@
+# Maintainer: Rizwan Hasan <rizwan.hasan486@gmail.com>
+
+pkgname=thunar-root
+pkgver=1.0
+pkgrel=1
+pkgdesc="Root Mode for thunar"
+arch=('x86_64')
+url="https://github.com/Rizwan-Hasan/MagpieOS-Packages/tree/master/thunar-root"
+license=('GPL3')
+depends=('gui-sudo' 'thunar')
+source=("$pkgname.desktop")
+md5sums=('044124669e5930ec35830422a15b1ff5')
+
+package() {
+  mkdir -pv ${pkgdir}/usr/share/applications
+  cp -v ${pkgname}.desktop ${pkgdir}/usr/share/applications/
+  chmod 777 ${pkgdir}/usr/share/applications/${pkgname}.desktop
+  chmod +x ${pkgdir}/usr/share/applications/${pkgname}.desktop
+}

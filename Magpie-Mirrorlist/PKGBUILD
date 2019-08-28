@@ -1,0 +1,17 @@
+# Maintainer: Rizwan Hasan <rizwan.hasan486@gmail.com>
+
+pkgname=magpie-mirrorlist
+pkgver=2.0
+pkgrel=2
+pkgdesc="MagpieOS mirror list for use by pacman"
+arch=('any')
+url="http://mirror.magpieos.net/MagpieOS-Repository/"
+license=('GPL')
+source=($pkgname.zip)
+md5sums=('570b043d7b0c128c92ea9e205bbfcd76')
+
+package() {
+  mkdir -p $pkgdir/etc/pacman.d/magpie
+  install -m644 $srcdir/$pkgname $pkgdir/etc/pacman.d/magpie/
+  echo "Don't edit any file of this directory" > $pkgdir/etc/pacman.d/magpie/do_not_edit_any_file_of_this_directory
+}

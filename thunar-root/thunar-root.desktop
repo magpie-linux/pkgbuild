@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Thunar (Root)
+Comment=Browse the filesystem with the file manager as root
+Keywords=thunar;file;root
+Exec=gui-sudo thunar %F
+Icon=Thunar
+Terminal=false
+Type=Application

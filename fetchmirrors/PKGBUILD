@@ -1,0 +1,18 @@
+# Maintainer: Rizwan Hasan <rizwan.hasan486@gmail.com>
+
+pkgname=fetchmirrors
+pkgver=1.0
+pkgrel=1
+pkgdesc="Fetch and rank new pacman mirrorlist"
+arch=('any')
+url="https://github.com/deadhead420/fetchmirrors"
+license=('GPL2')
+depends=('curl' 'magpie-mirrorlist')
+source=('fetchmirrors.sh.gz')
+sha512sums=('92c63eb913e4ccc26e6918d4f02a8cb29d2237f370c76a42875288b1f3c0c4826b987db7dc71591528e0e49a9e20b4b22b1840b6ad49f1e0bdff69eb89d4b6ab')
+
+package() {
+  cd "${srcdir}"
+  install -Dm755 fetchmirrors.sh $pkgdir/usr/bin/fetchmirrors
+  chmod +x $pkgdir/usr/bin/fetchmirrors
+}

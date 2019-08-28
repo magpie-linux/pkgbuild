@@ -1,0 +1,20 @@
+# Contributor: Rizwan Hasan <rizwan.hasan486@gmail.com>
+
+pkgname=oxygen-neon-blue-cursor
+pkgver=1.0
+pkgrel=1
+pkgdesc="Oxygen Neon Blue cursor theme for MagpieOS"
+arch=('any')
+url="https://github.com/dicsonsimth/oxygen-neon-blue"
+license=('GPLv3')
+source=(oxygen-neon-blue-cursor.tar.gz::"https://github.com/dicsonsimth/oxygen-neon-blue/archive/master.tar.gz")
+md5sums=('a5e668bc6abce236cd24be6325bb8aec')
+
+package() {
+  cd ${srcdir}/oxygen-neon-blue-master
+  install -dm 755 "${pkgdir}/usr/share/icons"
+  mkdir -v "${pkgdir}/usr/share/icons/Neon-Blue"
+  rm -v README.md LICENSE
+  cp -avr * "${pkgdir}/usr/share/icons/Neon-Blue/"
+
+}

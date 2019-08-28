@@ -1,1 +1,1 @@
-# pkgbuild
+# MagpieOS-Packages

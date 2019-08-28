@@ -1,0 +1,21 @@
+# Maintainer: Rizwan Hasan <rizwan.hasan486@gmail.com>
+
+pkgname=magpieos-wallpaper
+pkgver=2.5
+pkgrel=2
+pkgdesc="Wallpapers for MagpieOS"
+arch=('any')
+url="http://www.magpieos.net"
+license=('GPL3')
+source=(${pkgname}.tar.xz)
+md5sums=('0520ef38befd862a659767189ee319fe')
+
+package() {
+  cd "${srcdir}/${pkgname}"
+  install -d "${pkgdir}/usr/share/magpieos/wallpaper"
+  install -d "${pkgdir}/usr/share/backgrounds"
+  ln -s "../magpieos/wallpaper" "${pkgdir}/usr/share/backgrounds/magpieos" # For Xfce Support
+  install -m644 *.jpg "${pkgdir}/usr/share/magpieos/wallpaper/"
+  install -d "${pkgdir}/usr/share/gnome-background-properties" # For Gnome Support
+  install -m644 magpieos-backgrounds.xml "${pkgdir}/usr/share/gnome-background-properties/"
+}

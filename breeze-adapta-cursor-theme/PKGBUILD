@@ -1,0 +1,18 @@
+# Maintainer: scan
+pkgname=breeze-adapta-cursor-theme
+pkgver=2.0
+pkgrel=1
+pkgdesc="Breeze Default Cursor Theme."
+arch=('any')
+url="https://www.gnome-look.org/p/1203505/"
+license=('GPL')
+source=("${pkgname}.tar.gz::https://github.com/mustafaozhan/Breeze-Adapta-Cursor/archive/master.tar.gz")
+md5sums=('d9b431ff90e58e44a07137889813c514')
+
+package() {
+	install -dm755 "$pkgdir/usr/share/icons"
+	cp -avr "$srcdir/Breeze-Adapta-Cursor-master" "$pkgdir/usr/share/icons/"
+	mv -v "$pkgdir/usr/share/icons/Breeze-Adapta-Cursor-master" "$pkgdir/usr/share/icons/breeze-adapta"
+	rm -v "$pkgdir/usr/share/icons/breeze-adapta/install.sh"
+	rm -v "$pkgdir/usr/share/icons/breeze-adapta/README.md"
+}

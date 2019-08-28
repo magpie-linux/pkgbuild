@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Categories=Utility
+Terminal=false
+Exec=/usr/share/Hash-Checker/main.py %F
+Name=Hash Checker
+Icon=/usr/share/Hash-Checker/icon.png

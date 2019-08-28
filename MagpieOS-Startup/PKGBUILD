@@ -1,0 +1,30 @@
+# Maintainer: "Rizwan Hasan" <rizwan.hasan486@gmail.com>
+
+pkgname=magpieos-startup
+pkgver=3.2
+pkgrel=1
+pkgdesc="Startup sound configuration for MagpieOS"
+arch=('x86_64')
+url=""
+license=('GPLv3')
+source=("magpieos-startup.ogg"
+		"magpieos-hello.wav"
+		"startup.sh"
+		"LICENSE")
+md5sums=('c5a7004727e8204ce221005f240e8c89'
+ 		 '63999c2516314f3974d8fb44469da468'
+   		 '9e4298211c36cfd818f2833532f86ad4'
+         'd32239bcb673463ab874e80d47fae504')
+
+package() {
+  mkdir -pv "${pkgdir}/opt/magpieos-startup"
+  chmod 755 "${pkgdir}/opt/magpieos-startup"
+  # cp -v "magpieos-hello.wav" "${pkgdir}/opt/magpieos-startup/magpieos-hello.wav"
+  # chmod 755 "${pkgdir}/opt/magpieos-startup/magpieos-hello.wav"
+  cp -v "magpieos-startup.ogg" "${pkgdir}/opt/magpieos-startup/magpieos-startup.ogg"
+  chmod 755 "${pkgdir}/opt/magpieos-startup/magpieos-startup.ogg"
+  cp -v "startup.sh" "${pkgdir}/opt/magpieos-startup/startup.sh"
+  chmod +x "${pkgdir}/opt/magpieos-startup/startup.sh"
+  cp -v "LICENSE" "${pkgdir}/opt/magpieos-startup/LICENSE"
+  chmod 755 "${pkgdir}/opt/magpieos-startup/LICENSE"
+}

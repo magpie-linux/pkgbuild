@@ -1,0 +1,18 @@
+# Maintainer: Rizwan Hasan <rizwan.hasan486@gmail.com>
+
+pkgname=magpie-gfxboot-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="Gfxboot Theme for MagpieOS"
+arch=('x86_64')
+url="https://github.com/openSUSE/gfxboot"
+license=('GPL2')
+depends=('gfxboot' 'cpio')
+source=('magpie-gfxboot-theme.tar.xz')
+md5sums=('5187b2ccff7c4c6b9edf54c936c8c7da')
+
+package() {
+  cd ${srcdir}
+  install -dm755 $pkgdir/usr/share/gfxboot/themes
+  cp -avr MagpieOS $pkgdir/usr/share/gfxboot/themes/
+}
