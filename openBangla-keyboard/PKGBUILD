@@ -1,0 +1,29 @@
+# Maintainer: Rizwan Hasan <rizwan.hasan486@gmail.com>
+
+pkgname=openbangla-keyboard
+pkgver=1.5.1
+pkgrel=1
+pkgdesc="An Open Source Bengali input method"
+arch=('x86_64')
+url="http://openbangla.github.io/"
+license=('GPL3')
+depends=('qt5-base' 'libibus' 'ttf-freebanglafont' 'ibus' 'python-gobject')
+makedepends=('cmake')
+source=("Openbangla-Keyboard-$pkgver.tar.gz::https://github.com/OpenBangla/OpenBangla-Keyboard/archive/$pkgver.tar.gz")
+md5sums=('5b78fbafdc41688bb41a147bb3d71a8b')
+
+prepare() {
+ 	cd $srcdir/OpenBangla-Keyboard-$pkgver
+ 	mkdir -p build
+}
+
+build() {
+	cd $srcdir/OpenBangla-Keyboard-$pkgver/build
+	cmake ..
+	make	
+}
+
+package() {
+	cd $srcdir/OpenBangla-Keyboard-$pkgver/build
+	make DESTDIR="$pkgdir" install
+}
