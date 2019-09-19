@@ -1,8 +1,5 @@
-# Maintainer: Daniel Cafe
-# Contributor: 
-
 pkgname=qogir-gtk-theme-git
-pkgver=2019.05.03.18.gbefadd7
+pkgver=2019.08.31.5.g67043f5
 pkgrel=1
 pkgdesc='Qogir is a flat Design theme for GTK'
 arch=('any')
