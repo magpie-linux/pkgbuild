@@ -1,7 +1,7 @@
 pkgname=flash-drive-tool
 _pkgname=Flash-Drive-Tool-master
 pkgver=3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Format pendrive or create bootable usb easily"
 arch=('x86_64')
 url="https://github.com/Rizwan-Hasan/Flash-Drive-Tool"
