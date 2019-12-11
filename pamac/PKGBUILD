@@ -1,11 +1,11 @@
 pkgname=pamac
-pkgver=9.1.1
+pkgver=9.2.0
 pkgrel=1
 _pkgfixver=$pkgver
 
 _pkgvercommit=v$pkgver
 #_pkgvercommit='cd8551cdd40aef492589589c8c3b7fcadf0eaa42'
-sha256sums=('d33cdb4095d8182d8e1f23fa4ab8ba64b8e67f40e4766b53dedfc8a5289f30b7')
+sha256sums=('b4664d8c7685cceff29fbbf37e5917f93937e7a5f822b2427b51ac3317cd9714')
 
 pkgdesc="A Gtk3 frontend for libalpm"
 arch=('i686' 'x86_64' 'arm' 'armv6h' 'armv7h' 'aarch64')
@@ -15,7 +15,7 @@ depends=('glib2>=2.42' 'json-glib' 'libsoup' 'dbus-glib' 'polkit' 'vte3>=0.38' '
          'libnotify' 'desktop-file-utils' 'pacman>=5.2' 'gnutls>=3.4'
          'appstream-glib' 'archlinux-appstream-data' 'magpie-mirrorlist' 'mirrorlist-manager')
 
-optdepends=('polkit-gnome: needed for authentification in Cinnamon, Gnome'
+  optdepends=('polkit-gnome: needed for authentification in Cinnamon, Gnome'
               'lxsession: needed for authentification in Xfce, LXDE etc.'
               'pamac-tray-appindicator: tray icon for KDE')
 makedepends=('gettext' 'itstool' 'vala>=0.36.6' 'meson' 'ninja' 'git' 'gobject-introspection')
