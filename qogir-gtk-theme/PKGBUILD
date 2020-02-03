@@ -1,9 +1,9 @@
 # Maintainer: Daniel Cafe
-# Contributor: 
+# Contributor: Rizwan Hasan
 
 pkgname=qogir-gtk-theme-git
-pkgver=2019.10.25.9.gb207883
-pkgrel=1
+pkgver=2019.10.25.11.gb0e1162
+pkgrel=2
 pkgdesc='Qogir is a flat Design theme for GTK'
 arch=('any')
 url='https://github.com/vinceliuice/Qogir-theme'
@@ -25,5 +25,6 @@ package() {
   cd Qogir-theme
   mkdir -p "${pkgdir}/usr/share/themes"
   ./install.sh -d "${pkgdir}/usr/share/themes"
+  rm -rfv ${pkgdir}/usr/share/themes/Qogir-ubuntu*
   rm -rfv ${pkgdir}/usr/share/themes/Qogir-manjaro*
 }
