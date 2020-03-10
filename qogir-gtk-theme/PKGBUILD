@@ -1,9 +1,9 @@
 # Maintainer: Daniel Cafe
-# Contributor: Rizwan Hasan
+# Contributor: 
 
 pkgname=qogir-gtk-theme-git
-pkgver=2019.10.25.11.gb0e1162
-pkgrel=2
+pkgver=2020.02.26.r4.gd689233
+pkgrel=1
 pkgdesc='Qogir is a flat Design theme for GTK'
 arch=('any')
 url='https://github.com/vinceliuice/Qogir-theme'
@@ -18,7 +18,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd Qogir-theme
-  git describe --tags | sed 's/-/./g'
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 package() {
